@@ -30,10 +30,10 @@ Integer-based datatypes (e.g. uint8, int32) Float-based datatypes (float, double
     
     <item>
       <title>Data Units</title>
-      <link>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/data_unit_types/</link>
+      <link>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/data_units/</link>
       <pubDate>Sun, 04 Aug 2019 12:36:12 +0200</pubDate>
       
-      <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/data_unit_types/</guid>
+      <guid>https://covesa.github.io/vehicle_signal_specification/rule_set/data_entry/data_units/</guid>
       <description>Introduction to Data Units in VSS It is in VSS possible for signals to specify a unit of measurement from a list of predefined data units. For most signals in the VSS standard catalog, a data unit has been selected. A typical example is Vehicle.Speed, as shown below.
 Vehicle.Speed: datatype: float type: sensor unit: km/h description: Vehicle speed. The ambition when selecting data unit for signals in VSS standard catalog has been to use either a unit based on SI-units, or a unit commonly used within the vehicle industry.</description>
     </item>

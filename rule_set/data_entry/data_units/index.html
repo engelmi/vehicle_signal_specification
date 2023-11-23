@@ -12,21 +12,21 @@
     <title>Data Units :: Vehicle Signal Specification</title>
 
     
-    <link href="/vehicle_signal_specification/css/nucleus.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/hybrid.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/featherlight.min.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/perfect-scrollbar.min.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/auto-complete.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/atom-one-dark-reasonable.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/theme.css?1700734334" rel="stylesheet">
-    <link href="/vehicle_signal_specification/css/hugo-theme.css?1700734334" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/nucleus.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/fontawesome-all.min.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/hybrid.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/featherlight.min.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/perfect-scrollbar.min.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/auto-complete.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/atom-one-dark-reasonable.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/theme.css?1700738980" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/hugo-theme.css?1700738980" rel="stylesheet">
     
-    <link href="/vehicle_signal_specification/css/theme-blue.css?1700734334" rel="stylesheet">
+    <link href="/vehicle_signal_specification/css/theme-blue.css?1700738980" rel="stylesheet">
     
     
 
-    <script src="/vehicle_signal_specification/js/jquery-3.3.1.min.js?1700734334"></script>
+    <script src="/vehicle_signal_specification/js/jquery-3.3.1.min.js?1700738980"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/">
+  <body class="" data-url="/vehicle_signal_specification/rule_set/data_entry/data_units/">
     <nav id="sidebar" class="">
 
 
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/vehicle_signal_specification/js/lunr.min.js?1700734334"></script>
-<script type="text/javascript" src="/vehicle_signal_specification/js/auto-complete.js?1700734334"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/lunr.min.js?1700738980"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/auto-complete.js?1700738980"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/covesa.github.io\/vehicle_signal_specification\/";
     
 </script>
-<script type="text/javascript" src="/vehicle_signal_specification/js/search.js?1700734334"></script>
+<script type="text/javascript" src="/vehicle_signal_specification/js/search.js?1700738980"></script>
 
     
   </div>
@@ -325,8 +325,8 @@
  
   
     
-      <li data-nav-id="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/" title="Data Units" class="dd-item active">
-        <a href="/vehicle_signal_specification/rule_set/data_entry/data_unit_types/">
+      <li data-nav-id="/vehicle_signal_specification/rule_set/data_entry/data_units/" title="Data Units" class="dd-item active">
+        <a href="/vehicle_signal_specification/rule_set/data_entry/data_units/">
         Data Units
         
         </a>
@@ -657,7 +657,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/rule_set/data_entry/data_unit_types.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/covesa/vehicle_signal_specification/edit/master/docs-gen/content/rule_set/data_entry/data_units.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -717,6 +717,7 @@
     <li><a href="#list-of-supported-data-unit">List of supported Data Unit</a></li>
     <li><a href="#unit-file-syntax">Unit file syntax</a></li>
     <li><a href="#quantity-file-syntax">Quantity file syntax</a></li>
+    <li><a href="#defining-custom-units">Defining custom units</a></li>
   </ul>
 </nav>
     </div>
@@ -861,32 +862,28 @@ tooling also supports unit files using the old syntax described below.</p>
 <p>Defing quantities is recommended, but currently optional for backward compatibility reasons.
 If tooling supports quantity files it can verify that all units provided in unit files
 use defined quantities.</p>
-<p>``</p>
-<p>[
-<!-- raw HTML omitted -->: # Identifier preferably taken from a standard, like ISO 80000
-definition: <!-- raw HTML omitted -->
-[remark: <!-- raw HTML omitted -->] # remark as defined in for example ISO 80000
-[comment: <!-- raw HTML omitted -->]
-[deprecation: <!-- raw HTML omitted -->]
-]*</p>
 <pre tabindex="0"><code>
-
-The VSS list of quantitiess for the standard catalog exists in [quantities.yaml](https://github.com/COVESA/vehicle_signal_specification/blob/master/spec/quantities.yaml).
-
-## Defining custom units
-
-It is possible to define custom units in a unit file.
-Assume for instance you want to have a signal showing remaining range in [furlong](https://en.wikipedia.org/wiki/Furlong).
-Then you could add an additional unit `furlong`. No need to specify `unit` or `symbol` as they equals the default (i.e. &#34;furlong&#34;).
+  [
+    &lt;vss-quantity-identifier&gt;: # Identifier preferably taken from a standard, like ISO 80000
+      definition: &lt;string&gt;
+      [remark: &lt;string&gt;] # remark as defined in for example ISO 80000
+      [comment: &lt;string&gt;]
+      [deprecation: &lt;reason&gt;]
+  ]*
+</code></pre><p>The VSS list of quantitiess for the standard catalog exists in <a href="https://github.com/COVESA/vehicle_signal_specification/blob/master/spec/quantities.yaml">quantities.yaml</a>.</p>
+<h2 id="defining-custom-units">Defining custom units</h2>
+<p>It is possible to define custom units in a unit file.
+Assume for instance you want to have a signal showing remaining range in <a href="https://en.wikipedia.org/wiki/Furlong">furlong</a>.
+Then you could add an additional unit <code>furlong</code>. No need to specify <code>unit</code> or <code>symbol</code> as they equals the default (i.e. &ldquo;furlong&rdquo;).
 As this is unit not commonly used and not described in any standards, it might be relevant to describe how it can be converted to other units.
 That is however only informative, as it a custom unit a downstream implementation supporting unit conversion may not support automatic conversion
-of furlong to other units.
-</code></pre><p>units:
-furlong:
-definition: Length measured in furlong, 1 furlong equals 201.1680 m
-quantity: length
-allowed-datatypes: [&rsquo;numeric']</p>
-<pre tabindex="0"><code></code></pre>
+of furlong to other units.</p>
+<pre tabindex="0"><code>units:
+  furlong:
+    definition: Length measured in furlong, 1 furlong equals 201.1680 m
+    quantity: length
+    allowed-datatypes: [&#39;numeric&#39;]
+</code></pre>
 
 <footer class="footline">
 	
@@ -1309,19 +1306,19 @@ allowed-datatypes: [&rsquo;numeric']</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/vehicle_signal_specification/js/clipboard.min.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/perfect-scrollbar.min.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/perfect-scrollbar.jquery.min.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/jquery.sticky.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/featherlight.min.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/highlight.pack.js?1700734334"></script>
+    <script src="/vehicle_signal_specification/js/clipboard.min.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/perfect-scrollbar.min.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/perfect-scrollbar.jquery.min.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/jquery.sticky.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/featherlight.min.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/highlight.pack.js?1700738980"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/vehicle_signal_specification/js/modernizr.custom-3.6.0.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/learn.js?1700734334"></script>
-    <script src="/vehicle_signal_specification/js/hugo-learn.js?1700734334"></script>
+    <script src="/vehicle_signal_specification/js/modernizr.custom-3.6.0.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/learn.js?1700738980"></script>
+    <script src="/vehicle_signal_specification/js/hugo-learn.js?1700738980"></script>
     
         
-            <script src="/vehicle_signal_specification/mermaid/mermaid.js?1700734334"></script>
+            <script src="/vehicle_signal_specification/mermaid/mermaid.js?1700738980"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
