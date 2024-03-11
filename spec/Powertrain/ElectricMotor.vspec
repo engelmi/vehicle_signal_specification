@@ -68,10 +68,18 @@ Temperature:
 #
 CoolantTemperature:
   datatype: int16
+  deprecation: v5.0 moved to EngineCoolant.Temperature
   type: sensor
   unit: celsius
   description: Motor coolant temperature (if applicable).
 
+#
+# Engine coolant
+#
+EngineCoolant:
+  type: branch
+  description: Signals related to the engine coolant (if applicable).
+#include EngineCoolant.vspec EngineCoolant
 
 #
 # Current Power
