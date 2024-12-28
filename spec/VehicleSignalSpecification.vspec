@@ -206,3 +206,6 @@ Vehicle.Connectivity:
 #include Vehicle/Connectivity.vspec Vehicle.Connectivity
 
 #include Vehicle/Diagnostics.vspec Vehicle
+
+
+#include BlueChi/bluechi.vspec Vehicle
