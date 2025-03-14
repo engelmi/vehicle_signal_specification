@@ -1,0 +1,8 @@
+Types:
+    type: branch
+    description: User-defined types
+
+Types.BlueChi:
+    type: branch
+    description: System managed by BlueChi
+#include Types/BlueChi.vspec Types.BlueChi Types.BlueChi.ManagedNode

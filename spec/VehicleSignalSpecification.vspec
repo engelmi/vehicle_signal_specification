@@ -208,3 +208,13 @@ Vehicle.Connectivity:
 #include Vehicle/Diagnostics.vspec Vehicle
 
 #include Vehicle/MotionManagement.vspec Vehicle
+
+Vehicle.BlueChi:
+  type: branch
+  description: BlueChi something
+
+Vehicle.BlueChi.ManagedNodeList:
+    datatype: Types.BlueChi.ManagedNode[]
+    type: attribute
+    description: All Nodes managed by BlueChi
+    default: []

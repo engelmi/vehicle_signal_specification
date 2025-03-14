@@ -24,7 +24,7 @@ COMMON_ARGS=-u ./spec/units.yaml --strict
 COMMON_VSPEC_ARG=-s ./spec/VehicleSignalSpecification.vspec
 
 json:
-	vspec export json ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.json
+	vspec export json ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.json --types ./spec/VehicleSignalSpecificationTypes.vspec --types-output types.json
 
 json-noexpand:
 	vspec export json ${COMMON_ARGS} --no-expand ${COMMON_VSPEC_ARG} -o vss_noexpand.json

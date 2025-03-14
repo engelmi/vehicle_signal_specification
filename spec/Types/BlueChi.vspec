@@ -1,0 +1,40 @@
+Types.BlueChi.ManagedNode:
+    type: struct
+    description: An Node in the car
+
+Types.BlueChi.ManagedNode.Name:
+    datatype: string
+    type: property
+    description: The name of the Node
+
+Types.BlueChi.ManagedNode.Status:
+    datatype: string
+    type: property
+    description: The name of the Node
+    allowed: ['online', 'offline']
+    default: 'offline'
+
+Types.BlueChi.ManagedNode.ServiceList:
+    datatype: Types.BlueChi.ManagedService[]
+    type: property
+    description: All services managed by BlueChi on the Node
+    default: []
+
+Types.BlueChi.ManagedService:
+    type: struct
+    description: An available service on a managed Node
+
+Types.BlueChi.ManagedService.Name:
+    datatype: string
+    type: property
+    description: Name of the service
+
+Types.BlueChi.ManagedService.State:
+    datatype: string
+    type: property
+    description: State the service is currently in
+
+Types.BlueChi.ManagedService.SubState:
+    datatype: string
+    type: property
+    description: SubState the service is currently in
