@@ -22,9 +22,11 @@ TOOLSDIR?=./vss-tools
 VSS_VERSION ?= 0.0
 COMMON_ARGS=-u ./spec/units.yaml --strict
 COMMON_VSPEC_ARG=-s ./spec/VehicleSignalSpecification.vspec
+OUT_DIR=./out
 
-json:
-	vspec export json ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.json --types ./spec/VehicleSignalSpecificationTypes.vspec --types-output types.json
+
+json: setup
+	vspec export json ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o ${OUT_DIR}/vss.json --types ./spec/VehicleSignalSpecificationTypes.vspec --types-output ${OUT_DIR}/types.json
 
 json-noexpand:
 	vspec export json ${COMMON_ARGS} --no-expand ${COMMON_VSPEC_ARG} -o vss_noexpand.json
@@ -53,8 +55,8 @@ overlays:
 binary:
 	vspec export binary ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.binary
 
-protobuf:
-	vspec export protobuf ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.proto
+protobuf: setup
+	vspec export protobuf ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o ${OUT_DIR}/proto/vss.proto --types ./spec/VehicleSignalSpecificationTypes.vspec --types-out-dir ${OUT_DIR}/proto/
 
 graphql:
 	vspec export graphql ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.graphql.ts
@@ -74,7 +76,11 @@ ttl:
 id:
 	vspec export id ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.vspec
 
+setup:
+	mkdir -p ${OUT_DIR}
+
 clean:
 	rm -f vss.*
 	rm -rf apigear
 	rm -rf samm
+	rm -rf ${OUT_DIR}
