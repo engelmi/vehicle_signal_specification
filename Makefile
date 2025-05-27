@@ -53,7 +53,7 @@ overlays:
 	vspec export json ${COMMON_ARGS} -l overlays/extensions/OBD.vspec ${COMMON_VSPEC_ARG} -o vss_obd.json
 
 binary:
-	vspec export binary ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o vss.binary
+	vspec export binary ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o ${OUT_DIR}/vss.binary --types ./spec/VehicleSignalSpecificationTypes.vspec --types-output ${OUT_DIR}/types.binary
 
 protobuf: setup
 	vspec export protobuf ${COMMON_ARGS} ${COMMON_VSPEC_ARG} -o ${OUT_DIR}/proto/vss.proto --types ./spec/VehicleSignalSpecificationTypes.vspec --types-out-dir ${OUT_DIR}/proto/
